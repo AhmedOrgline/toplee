@@ -1,0 +1,307 @@
+@font-face {
+    font-family: light-font;
+    src: url(../font/WorkSans-Light.ttf);
+}
+@font-face {
+    font-family: E_light-font;
+    src: url(../font/WorkSans-ExtraLight.ttf);
+}
+@font-face {
+    font-family: semi-font;
+    src: url(../font/WorkSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: medium-font;
+    src: url(../font/WorkSans-Medium.ttf);
+}
+@font-face {
+    font-family: bold-font;
+    src: url(../font/WorkSans-Bold.ttf);
+}
+@font-face {
+    font-family: E_Bold-font;
+    src: url(../font/WorkSans-ExtraBold.ttf);
+}
+
+:root{
+    /* ========== Font =========== */
+    --light   : light-font;
+    --E_light : E_light-font;
+    --Semi    : semi-font;
+    --medium  : medium-font;
+    --bold    : Bold-font;
+    --E_bold  : E_Bold-font;
+    /* ========== Colors ========= */
+    --main-color : #10cab7;
+    --sacondary : #2c4755;
+}
+body {
+    font-family: var(--Semi);
+}
+
+header{
+    width: 100%;
+    box-shadow: 0 0 3px #ccc;
+    z-index: 10;
+}
+
+.container{
+    padding: 10px 15px 10px 15px; 
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (min-width : 768px) {
+    .container{
+        width: 750px;
+    }
+}
+@media (min-width : 992px) {
+    .container{
+        width: 970px;
+    }
+}
+@media (min-width : 1200px) {
+    .container{
+        width: 1170px;
+    }
+}
+
+.container .logo{
+    width: 70px;
+}
+
+.links{
+    position: relative;
+}
+
+.container .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(245, 245, 220, 0);
+    position: relative;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+.container .links .icon span{
+    height: 3px;
+    transition: 0.3s;
+    background-color: black;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+.container .links .icon span:first-child{
+    width: 100%;
+}
+.container .links .icon span:nth-child(2){
+    width: 50%;
+}
+.container .links .icon span:last-child{
+    width: 100%;
+}
+.container .links .icon:hover span{
+    width: 100%;
+}
+.container .links ul{
+    position: absolute;
+    list-style: none;
+    right: 0;
+    width: 200px;
+    padding: 0;
+    background-color: #cacaca;
+    display: none;
+    z-index: 1;
+}
+.container .links ul::before{
+    content: '';
+    border-width: 10px;
+    border-style: solid;
+    border-color: rgba(255, 0, 0, 0) rgba(0, 128, 0, 0) #cacaca rgba(255, 255, 0, 0);
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+.container .links:hover ul{
+    display: block;
+}
+.container .links ul li a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-family: var(--medium);
+    color: #515050;
+    transition: 0.3s;
+}
+.container .links ul li:not(:last-child){
+    border-bottom: 2px solid #bfbebe;
+}
+
+.container .links ul li:hover a{
+    padding-left: 30px;
+}
+
+/*=============== Starting article ==================*/
+article .landing{
+    background-image: url(../img/adventure-alpine-background-black-and-white.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 48px);
+    margin-top: 0;
+    position: relative;
+}
+
+article .landing .text-intro{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+    width: 500px;
+    max-width: 100%;
+}
+
+article .landing .text-intro h1{
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: var(--E_bold);
+    color: var(--main-color);
+}
+
+article .landing .text-intro p{
+    font-size: 19px;
+}
+
+.feature {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: #f6f6f6;
+} 
+
+.feature .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    grid-gap: 20px;
+}
+
+.feature .container .feat{
+    padding: 20px;
+    text-align: center;
+}
+
+.feature .container .feat i{
+    color: var(--main-color);
+    font-size: 50px;
+}
+.feature .container .feat h3{
+    font-family: var(--E_bold);
+    margin: 30px 0;
+}
+
+.feature .container .feat p{
+    line-height: 1.8;
+    color: #777;
+}
+/* start services */
+.services{
+    background-color: #ffffff;
+    position: relative;
+}
+.services .head
+{
+    width: 100%;
+    text-align: center;
+}
+/* class = head & his children */
+/* start */
+.head{
+    h1{
+        color: #ebecde;
+        font-size: 100px;
+        margin-bottom: 0;
+        text-align: center;
+        &+p{
+            margin: -30px 0 0;
+            font-size: 20px;
+            text-align: center;
+            color: #787878;
+        }
+    }
+}
+@media (max-width : 768px){
+    .head h1{
+        font-size: 60px;
+        &+p{
+            margin-top: -20px;
+            font-size: 15px;
+        }
+    }
+}
+
+
+/* End */
+/* Start services*/
+.services-content{
+    width: 100%;
+    height:auto ;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 5px;
+}
+.services-content .svg .col {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    margin: 20px 5px;
+    padding: 10px 0;
+    position: relative;
+}
+
+.services-content .svg .col p{
+    margin: 0;
+    color: #555;
+    line-height: 1;
+}
+.services-content .svg .col i{
+    text-align: center;
+    font-size: 35px;
+    margin-top: 20%;
+    color: var(--main-color);
+}
+.services-content .svg .col .back {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+}
+.services-content .svg .col .back::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-color: var(--sacondary);
+    top: 0;
+    right: 0;
+}
+
+.services-content .svg .col .back img{
+    width: 256px;
+    position: absolute;
+    right: 55px;
+    top: 10%;
+    height: 80%;
+}
+@media (max-width:992px) {
+    .services-content .svg:last-of-type{
+        display: none;
+    }
+}
+
+
+
+
+/* End services */
+/*=============== Ending article ==================*/
